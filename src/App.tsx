@@ -1,14 +1,12 @@
 import React from 'react';
 import './scss/style.scss';
-import { SplitScreen } from './layout/SplitScreen';
-import { Navbar } from './components/Navbar';
-import { Sidebar } from './components/Sidebar';
+import { Dashboard } from './screens/Dashboard';
 
 const App = () => {
   return (
-    <div>
-      <SplitScreen left={() => <Sidebar />} right={() => <Navbar />} />
-    </div>
+    <>
+      <Dashboard />
+    </>
   );
 }
 
