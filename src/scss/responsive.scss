@@ -12,10 +12,12 @@
     }
 
     .split-screen {
-        display: block;
+        display: flex;
+        flex-direction: column;
 
         .sidebar {
             width: auto;
+            height: 56px;
 
             &.showSidebar {
                 .sidebar-links {
@@ -27,7 +29,8 @@
     }
 
     .sidebar-header {
-        padding: 12px 16px;
+        padding: 8px 16px !important;
+        border-bottom: none !important;
 
         &_icon {
             margin-right: 24px;

@@ -1,18 +1,8 @@
 $primary-color: #3333FF;
 
-// .sidebar {
-//     flex: 0.2;
-//     width: 260px;
-//     height: 1189px;
-//     background-color: $primary-color;
-
-
-// }
-
-
 .sidebar {
-    background: #3333FF;
-    flex: 0.2;
+    background: $primary-color;
+    width: 260px;
     display: flex;
     flex-direction: column;
 
@@ -34,7 +24,7 @@ $primary-color: #3333FF;
 
         &_btn {
             margin-top: 40px;
-            margin-left: 16px;
+            align-self: center;
             background: #FF0066;
             height: 40px;
             border-radius: 40px;
@@ -54,15 +44,6 @@ $primary-color: #3333FF;
         flex-direction: column;
         justify-content: space-between;
 
-        &_close {
-            color: white;
-            font-size: 24px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            position: absolute;
-            top: 20px;
-            right: 30px;
-        }
-
         ul {
             margin: 0;
             padding: 0;
@@ -74,16 +55,24 @@ $primary-color: #3333FF;
 
                 .item {
                     padding: 16px;
-                    display: block;
+                    display: flex;
+                    text-decoration: none;
+                    color: white;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 22px;
 
                     &_icon {
                         margin-right: 10px;
+                        width: 18.89px;
+                        height: 18.89px;
+                        align-self: end;
                     }
 
                     &:hover,
                     &.active {
                         background: #5252FF;
-                        border-radius: 20px;
+                        border-radius: 12px;
                     }
                 }
             }

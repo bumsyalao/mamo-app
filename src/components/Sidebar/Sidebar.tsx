@@ -6,13 +6,12 @@ export const Sidebar = () => {
 
     const [showSidebar, setShowSidebar] = useState(false);
 
-    const openSidebar = () => setShowSidebar(true);
-    const closeSidebar = () => setShowSidebar(false);
+    const openSidebar = () => setShowSidebar(!showSidebar);
 
     return (
         <div className={`sidebar ${showSidebar ? 'showSidebar' : ''}`} >
             <SidebarHeader handleShowMenu={openSidebar} />
-            <SidebarLinks onClose={closeSidebar} />
+            <SidebarLinks />
         </div>
     );
 }

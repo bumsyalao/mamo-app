@@ -3,7 +3,7 @@ import React from 'react';
 export const SidebarHeader = ({ handleShowMenu }: { handleShowMenu: () => void }) => {
 
     return (
-        <div>
+        <>
             <div className="sidebar-header">
                 <span
                     className="sidebar-header_icon hideOnDesktop"
@@ -22,7 +22,7 @@ export const SidebarHeader = ({ handleShowMenu }: { handleShowMenu: () => void }
             <button className="sidebar-header_btn hideOnMobile">
                 Create Payment Link
             </button>
-        </div>
+        </>
     );
 
 };

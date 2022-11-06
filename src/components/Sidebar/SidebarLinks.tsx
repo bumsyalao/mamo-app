@@ -1,21 +1,15 @@
 import React from 'react';
 import { links } from '../../util/mock-data';
 
-export const SidebarLinks = ({ onClose }: { onClose: () => void }) => {
+export const SidebarLinks = () => {
     return (
         <div className="sidebar-links">
-            <span
-                onClick={onClose}
-                className="sidebar-links_close hideOnDesktop"
-            >
-                X
-            </span>
             <ul>
                 {links.map((link, i) => (
                     <li key={i}>
                         <a
-                            className={`item ${link.active && 'active'}`}
-                            href="#0"
+                            className={`item ${link.active && ' active'}`}
+
                         >
                             <span className="item_icon">
                                 <img
