@@ -1,0 +1,61 @@
+@media screen and (min-width: 800px) {
+    .hideOnDesktop {
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    .split-screen {
+        display: flex;
+        flex-direction: column;
+
+        .sidebar {
+            width: auto;
+            height: 56px;
+
+            &.showSidebar {
+                .sidebar-links {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .sidebar-header {
+        padding: 8px 16px !important;
+        border-bottom: none !important;
+
+        &_icon {
+            margin-right: 24px;
+        }
+    }
+
+    .sidebar-links {
+        position: fixed;
+        inset: 0 0 0 0;
+        background: #3333FF;
+        z-index: 9999;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .user-avatar {
+        background: #7070FF;
+        border-radius: 20px;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 16px;
+        padding: 7px 7px;
+    }
+}

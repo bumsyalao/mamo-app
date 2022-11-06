@@ -1,0 +1,96 @@
+$primary-color: #3333FF;
+
+.sidebar {
+    background: $primary-color;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+
+
+    .sidebar-header {
+        padding: 16px;
+        border-bottom: 1px solid #474FF6;
+        display: flex;
+        align-items: center;
+
+        &_logo {
+            width: 115px;
+        }
+
+        &_user {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        &_btn {
+            margin-top: 40px;
+            align-self: center;
+            background: #FF0066;
+            height: 40px;
+            border-radius: 40px;
+            padding: 5px 32px;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+
+        }
+    }
+
+    .sidebar-links {
+        padding: 40px 8px;
+        position: relative;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            color: white;
+            list-style: none;
+
+            li {
+                margin: 0;
+
+                .item {
+                    padding: 16px;
+                    display: flex;
+                    text-decoration: none;
+                    color: white;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 22px;
+
+                    &_icon {
+                        margin-right: 10px;
+                        width: 18.89px;
+                        height: 18.89px;
+                        align-self: end;
+                    }
+
+                    &:hover,
+                    &.active {
+                        background: #5252FF;
+                        border-radius: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page_footer {
+    border-top: 1px solid #474FF6;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 18px;
+    justify-content: center;
+}
+
+.navbar {
+    // flex: 0.9;
+}
