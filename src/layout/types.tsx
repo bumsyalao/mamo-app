@@ -1,3 +1,3 @@
-export interface SplitScreenProps {
+export interface SplitLayoutProps {
     children: Array<JSX.Element>
 }

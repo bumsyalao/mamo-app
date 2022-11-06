@@ -1,14 +1,14 @@
 import React from 'react';
-import { SplitScreenProps } from './types';
+import { SplitLayoutProps } from './types';
 
-export const SplitScreen = ({
+export const SplitLayout = ({
     children
-}: SplitScreenProps) => {
+}: SplitLayoutProps) => {
 
     const [left, right] = children;
 
     return (
-        <section className="split-screen">
+        <section className="split-layout">
             {left}
             {right}
         </section>

@@ -11,7 +11,7 @@
         display: none;
     }
 
-    .split-screen {
+    .split-layout {
         display: flex;
         flex-direction: column;
 
@@ -58,4 +58,15 @@
         line-height: 16px;
         padding: 7px 7px;
     }
+
+    .breadcrumb {
+        padding: 12px !important;
+        height: 44px !important;
+    }
+
+    .text-banner {
+        padding: 0px 12px !important;
+
+    }
+
 }

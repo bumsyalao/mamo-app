@@ -1,15 +1,20 @@
 import React from 'react';
-import { SplitScreen } from '../layout/SplitScreen';
-import { Navbar } from '../components/Navbar';
+import { SplitLayout } from '../layout/SplitLayout';
+import { PageLayout } from '../layout/PageLayout';
 import { Sidebar } from '../components/Sidebar/Sidebar';
+import { Breadcrumb } from '../components/Breadcrumb';
+import { TextBanner } from '../components/TextBanner';
 
 export const Dashboard = () => {
     return (
         <>
-            <SplitScreen>
+            <SplitLayout>
                 <Sidebar />
-                <Navbar />
-            </SplitScreen>
+                <PageLayout>
+                    <Breadcrumb />
+                    <TextBanner />
+                </PageLayout>
+            </SplitLayout>
 
         </>
     );

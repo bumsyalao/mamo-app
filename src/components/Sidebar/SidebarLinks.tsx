@@ -26,7 +26,7 @@ export const SidebarLinks = () => {
                 ))}
             </ul>
             {/* move to a new file */}
-            <div className="page_footer">
+            <div className="page-footer">
                 <div>&#9829; Powered by Mamo</div>
             </div>
         </div>
