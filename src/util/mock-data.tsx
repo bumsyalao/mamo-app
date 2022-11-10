@@ -12,6 +12,8 @@ export const links = [
     },
 ];
 
+export const tableHeaders = ['Invoice ID', 'Customer', 'Amount', 'Status', 'Created'];
+
 export enum Status {
     outstanding = 'Outstanding',
     paid = 'Paid',
@@ -23,7 +25,7 @@ export type Invoices = {
     customer: string;
     amount: number;
     status: Status
-    createdAt: string
+    created: string
 }
 const invoices: Invoices[] = [
     {
@@ -31,70 +33,70 @@ const invoices: Invoices[] = [
         customer: 'Asma Alyamani',
         amount: 150.00,
         status: Status.outstanding,
-        createdAt: '25/04/2021'
+        created: '25/04/2021'
     },
     {
         id: '4574232-0001',
         customer: 'Asma Alyamani',
         amount: 150.00,
         status: Status.outstanding,
-        createdAt: '25/04/2021'
+        created: '25/04/2021'
     },
     {
         id: '4574232-0001',
         customer: 'Asma Alyamani',
         amount: 150.00,
         status: Status.outstanding,
-        createdAt: '25/04/2021'
+        created: '25/04/2021'
     },
     {
         id: '4574232-0001',
         customer: 'Asma Alyamani',
         amount: 150.00,
         status: Status.outstanding,
-        createdAt: '25/04/2021'
+        created: '25/04/2021'
     },
     {
         id: '4574232-0001',
         customer: 'Asma Alyamani',
         amount: 150.00,
         status: Status.outstanding,
-        createdAt: '25/04/2021'
+        created: '25/04/2021'
     },
     {
         id: '4574232-0001',
         customer: 'Asma Alyamani',
         amount: 150.00,
         status: Status.cancelled,
-        createdAt: '25/04/2021'
+        created: '25/04/2021'
     },
     {
         id: '4574232-0001',
         customer: 'Asma Alyamani',
         amount: 150.00,
         status: Status.paid,
-        createdAt: '25/04/2021'
+        created: '25/04/2021'
     },
     {
         id: '4574232-0001',
         customer: 'Asma Alyamani',
         amount: 150.00,
         status: Status.paid,
-        createdAt: '25/04/2021'
+        created: '25/04/2021'
     },
     {
         id: '4574232-0001',
         customer: 'Asma Alyamani',
         amount: 150.00,
         status: Status.paid,
-        createdAt: '25/04/2021'
+        created: '25/04/2021'
     },
     {
         id: '4574232-0001',
         customer: 'Asma Alyamani',
         amount: 150.00,
         status: Status.paid,
-        createdAt: '25/04/2021'
+        created: '25/04/2021'
     },
 
 ]

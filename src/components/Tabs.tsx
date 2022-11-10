@@ -34,7 +34,7 @@ export const Tabs = ({ children }: any) => {
                         );
                     })}
                 </ol>
-                <Button className="tab_btn" type="primary" text="New invoice" />
+                <Button className="tab_btn" text="New invoice" type="primary" />
             </div>
             <div className="divider"></div>
 

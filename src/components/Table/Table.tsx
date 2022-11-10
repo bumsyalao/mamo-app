@@ -1,32 +1,32 @@
 import React from 'react';
+import { tableHeaders, Invoices } from '../../util/mock-data'
+import { Badges } from '../Badges';
 
-export const Table = ({ tableData }: any) => {
+export const Table = ({ tableData }: { tableData: Invoices[] }) => {
 
-    console.log(tableData, '=====');
     return (
         <table className="table">
             <thead>
                 <tr>
-                    { }
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Age</th>
-                    <th>Location</th>
-                    <th>Phone</th>
-                    <th>Email</th>
+                    {tableHeaders.map((header, i) => {
+                        return <th key={header + i}>{header}</th>
+                    })}
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>25</td>
-                    <td>London</td>
-                    <td>123456789</td>
-                    <td>
 
-                    </td>
-                </tr>
+                {tableData.map(({ id, customer, amount, status, created }, i) => {
+                    return (
+                        <tr key={id + i}>
+                            <td>{id}</td>
+                            <td>{customer}</td>
+                            <td>{`AED ${amount}`}</td>
+                            <td><Badges status={status} /></td>
+                            <td>{created}</td>
+                            <td></td>
+                        </tr>
+                    )
+                })}
 
             </tbody>
         </table>
