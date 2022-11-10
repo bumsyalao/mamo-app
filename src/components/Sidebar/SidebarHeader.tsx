@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../Button';
 
 export const SidebarHeader = ({ handleShowMenu }: { handleShowMenu: () => void }) => {
 
@@ -19,9 +20,10 @@ export const SidebarHeader = ({ handleShowMenu }: { handleShowMenu: () => void }
                 </span>
             </div>
             {/* move this to a new file */}
-            <button className="sidebar-header_btn hideOnMobile">
-                Create Payment Link
-            </button>
+
+            <div className="sidebar-header_btn hideOnMobile">
+                <Button text="Create Payment Link" type="secondary" />
+            </div>
         </>
     );
 

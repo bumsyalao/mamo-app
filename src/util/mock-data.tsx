@@ -12,3 +12,92 @@ export const links = [
     },
 ];
 
+export enum Status {
+    outstanding = 'Outstanding',
+    paid = 'Paid',
+    cancelled = 'Cancelled',
+
+}
+export type Invoices = {
+    id: string;
+    customer: string;
+    amount: number;
+    status: Status
+    createdAt: string
+}
+const invoices: Invoices[] = [
+    {
+        id: '4574232-0001',
+        customer: 'Asma Alyamani',
+        amount: 150.00,
+        status: Status.outstanding,
+        createdAt: '25/04/2021'
+    },
+    {
+        id: '4574232-0001',
+        customer: 'Asma Alyamani',
+        amount: 150.00,
+        status: Status.outstanding,
+        createdAt: '25/04/2021'
+    },
+    {
+        id: '4574232-0001',
+        customer: 'Asma Alyamani',
+        amount: 150.00,
+        status: Status.outstanding,
+        createdAt: '25/04/2021'
+    },
+    {
+        id: '4574232-0001',
+        customer: 'Asma Alyamani',
+        amount: 150.00,
+        status: Status.outstanding,
+        createdAt: '25/04/2021'
+    },
+    {
+        id: '4574232-0001',
+        customer: 'Asma Alyamani',
+        amount: 150.00,
+        status: Status.outstanding,
+        createdAt: '25/04/2021'
+    },
+    {
+        id: '4574232-0001',
+        customer: 'Asma Alyamani',
+        amount: 150.00,
+        status: Status.cancelled,
+        createdAt: '25/04/2021'
+    },
+    {
+        id: '4574232-0001',
+        customer: 'Asma Alyamani',
+        amount: 150.00,
+        status: Status.paid,
+        createdAt: '25/04/2021'
+    },
+    {
+        id: '4574232-0001',
+        customer: 'Asma Alyamani',
+        amount: 150.00,
+        status: Status.paid,
+        createdAt: '25/04/2021'
+    },
+    {
+        id: '4574232-0001',
+        customer: 'Asma Alyamani',
+        amount: 150.00,
+        status: Status.paid,
+        createdAt: '25/04/2021'
+    },
+    {
+        id: '4574232-0001',
+        customer: 'Asma Alyamani',
+        amount: 150.00,
+        status: Status.paid,
+        createdAt: '25/04/2021'
+    },
+
+]
+
+export default invoices;
+
