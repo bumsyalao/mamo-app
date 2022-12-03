@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
+import { Link } from 'react-router-dom'
 
 
 type TabProps = {
@@ -34,7 +35,7 @@ export const Tabs = ({ children }: any) => {
                         );
                     })}
                 </ol>
-                <Button className="tab_btn" text="New invoice" type="primary" />
+                <Button className="tab_btn" text="New invoice" type="primary" link="create-invoice" />
             </div>
             <div className="divider"></div>
 

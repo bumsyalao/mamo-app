@@ -1,0 +1,44 @@
+.form-wrapper {
+    background: #F5F6F8;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.invoice-form {
+    display: flex;
+    flex-direction: column;
+    padding: 48px;
+    width: 684px;
+    height: 80%;
+    background: #FFFFFF;
+    border-radius: 16px;
+
+    .form-header {
+        align-items: center;
+        text-align: center;
+
+        h2 {
+            margin: 0px;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 40px;
+            align-self: stretch;
+
+        }
+
+        p {
+
+            width: 85%;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            display: flex;
+            color: #525A67;
+            margin-left: 46px;
+
+        }
+    }
+}
