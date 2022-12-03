@@ -4,6 +4,7 @@ import { Button } from '../Button';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { regexData } from '../../util/constants';
+import { useNavigate } from 'react-router-dom';
 
 
 type CreateInvoiceDataType = {
@@ -12,12 +13,15 @@ type CreateInvoiceDataType = {
     email: string;
     phoneNumberCode: string;
     phoneNumber: string;
-    amount: string;
+    amount: number;
     description: string;
 };
 
 
 export const CreateInvoiceForm = () => {
+    const navigate = useNavigate();
+
+
     const validationSchema = Yup.object().shape({
         firstName: Yup.string()
             .trim()
@@ -34,11 +38,11 @@ export const CreateInvoiceForm = () => {
             .matches(regexData['emailRegex']),
         phoneNumberCode: Yup.string(),
         phoneNumber: Yup.string(),
-        amount: Yup.string().required('An amount is required '),
+        amount: Yup.number().required('An amount is required '),
         description: Yup.string().required('Please add a description'),
     });
 
-    const { register, handleSubmit, formState: { errors } } = useForm<CreateInvoiceDataType>({
+    const { register, handleSubmit, formState: { errors }, trigger } = useForm<CreateInvoiceDataType>({
         resolver: yupResolver(validationSchema),
         defaultValues: {
             phoneNumberCode: '971',
@@ -47,7 +51,9 @@ export const CreateInvoiceForm = () => {
     });
 
 
-    const onSubmit = (data: any) => console.log(data, '======data');
+    const onSubmit = (data: any) => {
+        navigate('/');
+    };
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='invoice-form'>
@@ -55,33 +61,53 @@ export const CreateInvoiceForm = () => {
                 <h2>Create and send invoice</h2>
                 <p>An email with the invoice will be sent to your customer with a payment link for them to settle the invoice</p>
             </div>
-            <div>
-                <h4>Customer</h4>
-                <input {...register('firstName')} placeholder="First name" />
-                {errors.firstName && <p>{errors.firstName.message}</p>}
-                <input {...register("lastName")} placeholder="Last name" />
-                {errors.lastName && <p>{errors.lastName.message}</p>}
 
-                <input {...register("email")} placeholder="Email" />
-                {errors.email && <p>{errors.email.message}</p>}
+            <h4>Customer</h4>
+            <div className='flex'>
+                <div className='input-field'>
+                    <input {...register('firstName')} placeholder="First name" />
+                    {errors.firstName && <span>{errors.firstName.message}</span>}
 
-                <div>
-                    <input {...register("phoneNumberCode")} placeholder="Phone(optional)" />
-                    <input {...register("phoneNumber")} />
+                </div>
+                <div className='input-field'>
+                    <input {...register("lastName")} placeholder="Last name" />
+                    {errors.lastName && <span>{errors.lastName.message}</span>}
+
+                </div>
+
+            </div>
+
+            <div className='flex'>
+                <div className={'input-field'}>
+                    <input {...register("email")} placeholder="Email" />
+                    {errors.email && <span>{errors.email.message}</span>}
+
+                </div>
+
+                <div className='input-field-phone'>
+                    <input className='input-phone-code' {...register("phoneNumberCode")} />
+                    <input className='input-phone' {...register("phoneNumber")} placeholder="Phone(optional)" />
                 </div>
             </div>
-            <h4>Amount</h4>
 
-            <input {...register("amount")} placeholder="AED 0.00" />
-            {errors.amount && <p>{errors.amount.message}</p>}
+
+            <h4>Amount</h4>
+            <div className='input-field'>
+                <input {...register("amount")} placeholder="AED 0.00" />
+                {errors.amount && <span>{errors.amount.message}</span>}
+            </div>
 
             <h4>Description</h4>
+            <div className='input-field-full'>
+                <input {...register("description")} placeholder="What's payment for" />
+                {errors.description && <span>{errors.description.message}</span>}
 
-            <input {...register("description")} placeholder="What's payment for" />
-            {errors.description && <p>{errors.description.message}</p>}
+            </div>
 
-            {/* <Button onClick={handleSubmit(onSubmit)}>Submit</Button> */}
-            <input type="submit" />
+
+            <Button onClick={() => {
+                handleSubmit(onSubmit)
+            }} className="form_btn" text="Send invoice" type="primary" />
         </form>
     );
 };

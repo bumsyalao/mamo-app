@@ -41,4 +41,81 @@
 
         }
     }
+
+    input {
+        height: 30px;
+        // width: 282px;
+        border: none;
+        border-bottom: 1.5px solid #E5E9F0;
+        padding: 10px 0px 10px;
+        outline: none;
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+
+    span {
+        margin-top: 10px;
+        background: #FFE8E3;
+        padding: 0px 5px;
+        border-radius: 8px;
+        font-size: 12px;
+        line-height: 20px;
+        color: #E3291D;
+    }
+
+    span::before {
+        display: inline;
+        content: "⚠ ";
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        justify-content: space-between;
+
+    }
+
+    .input-field {
+        display: flex;
+        flex-direction: column;
+        width: 282px;
+        margin-bottom: 10px;
+    }
+
+    .input-field-full {
+
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .input-field-with-error {
+        input {
+            border-bottom: 1.5px solid #E3291D;
+        }
+    }
+
+    .form_btn {
+        margin-top: 40px;
+    }
+
+    .input-field-phone {
+        width: 45%;
+
+        .input-phone-code {
+            width: 60px !important;
+        }
+
+        .input-phone-code::after {
+            display: inline;
+            content: "⇓";
+        }
+
+        .input-phone {
+            width: 78% !important;
+        }
+    }
+
 }

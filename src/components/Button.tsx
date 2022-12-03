@@ -8,10 +8,10 @@ type ButtonProps = {
     className?: string;
     onClick?: () => void;
 };
-export const Button = ({ type = '', text = '', link = '' }: ButtonProps) => {
+export const Button = ({ type = '', text = '', link = '', className = '' }: ButtonProps) => {
     const navigate = useNavigate();
     return (
-        <button className={`button ${type}`} onClick={() => navigate(link)}>
+        <button className={`button ${type} ${className}`} onClick={() => navigate(link)}>
             {text}
         </button>
     );

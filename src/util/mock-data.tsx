@@ -12,7 +12,7 @@ export const links = [
     },
 ];
 
-export const tableHeaders = ['Invoice ID', 'Customer', 'Amount', 'Status', 'Created'];
+export const tableHeaders = ['Invoice ID', 'Customer', 'Amount', 'Status', 'Created', ''];
 
 export enum Status {
     outstanding = 'Outstanding',
