@@ -1,17 +1,16 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { Button } from '../Button';
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as Yup from "yup";
+import * as Yup from 'yup';
 import { regexData } from '../../util/constants';
 import { useNavigate } from 'react-router-dom';
-
+import PhoneInput from 'react-phone-number-input';
 
 type CreateInvoiceDataType = {
     firstName: string;
     lastName: string;
     email: string;
-    phoneNumberCode: string;
     phoneNumber: string;
     amount: number;
     description: string;
@@ -20,6 +19,7 @@ type CreateInvoiceDataType = {
 
 export const CreateInvoiceForm = () => {
     const navigate = useNavigate();
+    const [countryCode, setCountryCode] = React.useState("AE");
 
 
     const validationSchema = Yup.object().shape({
@@ -36,17 +36,13 @@ export const CreateInvoiceForm = () => {
             .required('Please enter your customer’s email')
             .email()
             .matches(regexData['emailRegex']),
-        phoneNumberCode: Yup.string(),
         phoneNumber: Yup.string(),
         amount: Yup.number().required('An amount is required '),
         description: Yup.string().required('Please add a description'),
     });
 
-    const { register, handleSubmit, formState: { errors }, trigger } = useForm<CreateInvoiceDataType>({
+    const { register, handleSubmit, formState: { errors }, control } = useForm<CreateInvoiceDataType>({
         resolver: yupResolver(validationSchema),
-        defaultValues: {
-            phoneNumberCode: '971',
-        },
         mode: 'onChange',
     });
 
@@ -64,12 +60,12 @@ export const CreateInvoiceForm = () => {
 
             <h4>Customer</h4>
             <div className='flex'>
-                <div className='input-field'>
+                <div className={`input-field ${errors.firstName ? 'input-field-with-error' : ''}`}>
                     <input {...register('firstName')} placeholder="First name" />
                     {errors.firstName && <span>{errors.firstName.message}</span>}
 
                 </div>
-                <div className='input-field'>
+                <div className={`input-field ${errors.lastName ? 'input-field-with-error' : ''}`}>
                     <input {...register("lastName")} placeholder="Last name" />
                     {errors.lastName && <span>{errors.lastName.message}</span>}
 
@@ -78,27 +74,38 @@ export const CreateInvoiceForm = () => {
             </div>
 
             <div className='flex'>
-                <div className={'input-field'}>
+                <div className={`input-field input-field-email ${errors.email ? 'input-field-with-error' : ''}`}>
                     <input {...register("email")} placeholder="Email" />
                     {errors.email && <span>{errors.email.message}</span>}
 
                 </div>
 
                 <div className='input-field-phone'>
-                    <input className='input-phone-code' {...register("phoneNumberCode")} />
-                    <input className='input-phone' {...register("phoneNumber")} placeholder="Phone(optional)" />
+                    <label>Phone number (optional)</label>
+                    <Controller
+                        name="phoneNumber"
+                        control={control}
+                        render={({ field }) => (
+                            <PhoneInput
+                                {...field}
+                                onCountryChange={(v) => setCountryCode(v as string)}
+                                limitMaxLength={true}
+                                international={true}
+                                defaultCountry="AE"
+                            />
+                        )}
+                    />
                 </div>
             </div>
 
-
             <h4>Amount</h4>
-            <div className='input-field'>
+            <div className={`input-field ${errors.amount ? 'input-field-with-error' : ''}`}>
                 <input {...register("amount")} placeholder="AED 0.00" />
                 {errors.amount && <span>{errors.amount.message}</span>}
             </div>
 
             <h4>Description</h4>
-            <div className='input-field-full'>
+            <div className={`input-field-full ${errors.description ? 'input-field-with-error' : ''}`}>
                 <input {...register("description")} placeholder="What's payment for" />
                 {errors.description && <span>{errors.description.message}</span>}
 

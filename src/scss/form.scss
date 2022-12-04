@@ -77,6 +77,13 @@
 
     }
 
+    @media screen and (max-width: 800px) {
+        .flex {
+            flex-direction: column;
+        }
+
+    }
+
     .input-field {
         display: flex;
         flex-direction: column;
@@ -85,7 +92,6 @@
     }
 
     .input-field-full {
-
         display: flex;
         flex-direction: column;
         margin-bottom: 10px;
@@ -101,21 +107,55 @@
         margin-top: 40px;
     }
 
+    .input-field-email {
+        margin-top: 20px;
+    }
+
     .input-field-phone {
-        width: 45%;
 
-        .input-phone-code {
-            width: 60px !important;
+        label {
+            font-size: 12px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            color: #9BA1B3;
         }
 
-        .input-phone-code::after {
-            display: inline;
-            content: "⇓";
+        input {
+            width: 238px;
         }
 
-        .input-phone {
-            width: 78% !important;
+        select {
+            width: 20px;
+            border: none;
         }
+
+        img {
+            border-radius: 20px;
+            height: 24px;
+            width: 24px;
+        }
+
+        .PhoneInput {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .PhoneInputCountry {
+            display: flex;
+            flex-direction: row-reverse;
+            border-bottom: 1.5px solid #E5E9F0;
+            height: 50px;
+            align-items: center;
+        }
+
+        .phoneNumberCountry {
+            height: 20px;
+            width: 20px;
+            border: none;
+        }
+
+
     }
 
 }
