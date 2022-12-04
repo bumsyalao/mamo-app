@@ -2,9 +2,6 @@
 
 Frontend technical challenge built with ReactJS
 
-## Table of Contents
-
-
 
 ## Development
 
