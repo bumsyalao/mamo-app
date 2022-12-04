@@ -1,0 +1,108 @@
+.table-wrapper {
+    background-color: #E5E9F0;
+    //tablet
+    // height: 80%;
+    //desktop
+    height: 100vh;
+    padding: 48px;
+
+    .table-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 95%;
+        background: #FFFFFF;
+        border-radius: 16px;
+    }
+
+    .table-tabs {
+        display: flex;
+        padding: 0px 30px;
+        width: 95%;
+        justify-content: space-between;
+
+    }
+
+    .divider {
+        width: 102%;
+        margin: -16px;
+        border-bottom: 1px solid #E5E9F0;
+    }
+
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 32px;
+
+    thead {
+
+        border-radius: 12px;
+        background: #F5F6F8;
+        color: #9BA1B3;
+        text-align: left;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+
+        th {
+            padding: 16px 13px;
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid #E5E9F0;
+            font-weight: 400;
+            font-size: 14px;
+            color: #080826;
+            padding: 16px 0px;
+
+            td {
+                padding: 16px 13px;
+            }
+        }
+
+        tr:last-child {
+            border-bottom: none;
+        }
+    }
+
+
+}
+
+.tab-footer {
+    display: flex;
+    padding: 10px 30px;
+    bottom: 0;
+
+    .table-footer-items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-size: 14px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    .table-footer-paginate {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        >div>button {
+            height: 40px;
+            width: 40px;
+            padding: auto;
+            border-radius: 100%;
+            margin-left: 5px;
+            background: white;
+            border: 1px solid #C7CEDC;
+            cursor: pointer;
+        }
+
+    }
+}

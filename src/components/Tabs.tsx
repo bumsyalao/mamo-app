@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
-import { Link } from 'react-router-dom'
+import { Paginate } from '../components/Paginate';
 
 
 type TabProps = {
@@ -10,11 +10,12 @@ type TabProps = {
 };
 
 export const Tabs = ({ children }: any) => {
-
     const [activeTab, setActiveTab] = useState(children[0].props.label as string);
+    const [selectedTableData, setSelectedTableData] = useState(children[0].props.tableData as any);
 
     const onClickTabItem = (label: string) => {
         setActiveTab(label);
+        setSelectedTableData(children.filter((child: any) => child.props.label === label)[0].props.tableData);
     }
 
     return (
@@ -24,7 +25,6 @@ export const Tabs = ({ children }: any) => {
                 <ol className="tab-list">
                     {children.map((child: any) => {
                         const { label } = child.props;
-
                         return (
                             <Tab
                                 activeTab={activeTab}
@@ -44,6 +44,12 @@ export const Tabs = ({ children }: any) => {
                     if (child.props.label !== activeTab) return undefined;
                     return child.props.children;
                 })}
+            </div>
+
+            <div className='divider'></div>
+            <div className='tab-footer'>
+                <Paginate tableData={selectedTableData} />
+
             </div>
         </div>
     );

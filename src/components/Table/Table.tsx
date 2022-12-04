@@ -27,7 +27,6 @@ export const Table = ({ tableData }: { tableData: Invoices[] }) => {
                         </tr>
                     )
                 })}
-
             </tbody>
         </table>
     );

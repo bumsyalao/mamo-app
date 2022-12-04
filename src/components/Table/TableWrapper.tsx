@@ -23,7 +23,7 @@ export const TableWrapper = () => {
                         let tableData = getTableData(tab);
 
                         return (
-                            <div label={`${tab} (${tableData.length})`} key={tab + i}>
+                            <div label={`${tab} (${tableData.length})`} key={tab + i} tableData={tableData} >
                                 <Table tableData={tableData} />
                             </div>
                         )
